@@ -39,11 +39,18 @@ for cd in cuadrados:
 for cd in lista_cuadrados:
     for x in range(maxY + 1):
         for y in range(maxX + 1):
-            if cd[1]  == x and cd[0] <= y and cd[3] >= y :
+            valor0 = abs(cd[0]- 6)
+            valor3 = abs(cd[3]- 6)
+            valor1 = abs(cd[1]- 6)
+            valor2 = abs(cd[2]- 6)
+            if valor1  == x   and cd[2] >= y and cd[0] <= y:
                     print('o ', end='')
-            elif cd[0] == y and cd[2] <= x :
+            elif valor3 == x and cd[2] >= y and cd[0] <= y:
                 print('o ', end='')
-
+            elif cd[0] == y and valor3 >= x and valor1 <= x:
+                print('o ', end='')
+            elif cd[2] == y and valor3 >= x and valor1 <= x:
+                print('o ', end='')
             else:
                 print('- ', end='')
         print()
